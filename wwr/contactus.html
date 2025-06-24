@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    #feedback {
+      background-color: antiquewhite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: .5em;
+      display: none;
+    }
+    .moveDown {
+      margin-top: 3em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a id="logo_link" href="index.html">
+        <img class="logo" src="images/logo.png" alt="Dry Oar Logo" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page2.html">Page 2</a></li>
+        <li><a href="siteplan.html">Site Plan</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div id="feedback"></div>
+
+    <!-- You will paste your form from the MDN tutorial here -->
+  </main>
+
+  <footer>
+    <p>Dry Oar &copy; 2025 - Prashab Gharti Chetri</p>
+    <div class="footer-links">
+      <a href="#">Site Plan</a>
+      <a href="contactus.html">Contact Us</a>
+    </div>
+    <div class="social">
+      <img src="images/facebook.jpg" alt="Facebook" />
+      <img src="images/twitter.jpg" alt="Twitter" />
+      <img src="images/instagram.jpg" alt="Instagram" />
+    </div>
+  </footer>
+
+  <script>
+    const feedbackElement = document.getElementById('feedback');
+    const formElement = document.forms[0];
+    if (formElement) {
+      formElement.addEventListener('submit', function(e) {
+        e.preventDefault();
+        feedbackElement.innerHTML = 'Hello ' + formElement.user_name.value + '! Thank you for your message. We will get back with you as soon as possible!';
+        feedbackElement.style.display = "block";
+        document.body.classList.toggle('moveDown');
+      });
+    }
+  </script>
+</body>
+</html>
