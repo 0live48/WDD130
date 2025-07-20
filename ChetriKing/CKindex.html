@@ -12,6 +12,7 @@
     <header>
         <div class="container">
             <a href="CKindex.html" class="logo-link">
+                <img src="CK pictures/CK logo.png" alt="Chetri King Logo" class="logo-image" >
                 <span class="logo-text">Chetri King</span>
             </a>
             <nav>
@@ -26,39 +27,66 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Headline Here Lorem Ipsum Dolor</h1>
-                <p>A subhead here about the game.</p>
-                <a href="#" class="cta-button">Learn More</a>
+                <h1>Command Your Army, Defend Your Realm</h1>
+                <p>A strategic card game of offense and defense. Deploy troops and lead your kingdom to victory.</p>
+                <a href="rules.html" class="cta-button">Learn How to Play</a>
             </div>
         </section>
 
         <section class="features container">
             <div class="feature-card">
-                <img src="https://placehold.co/400x300/f0f0f0/4a4a4a" alt="Feature 1 Placeholder">
-                <h3>SUBHEAD HERE</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                <img src="CK pictures/pic 1.png" alt="Strategic Deployment">
+                <h3>Strategic Deployment</h3>
+                <p>Place your cards on the battlefield and watch them advance each turn toward the enemy kingdom.</p>
             </div>
             <div class="feature-card">
-                <img src="https://placehold.co/400x300/f0f0f0/4a4a4a" alt="Feature 2 Placeholder">
-                <h3>SUBHEAD HERE</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                <img src="CK pictures/pic 2.png" alt="Protect Your Kingdom">
+                <h3>Protect Your Kingdom</h3>
+                <p>Your kingdom's health is paramount. Defend it from invading troops to survive the battle.</p>
             </div>
             <div class="feature-card">
-                <img src="https://placehold.co/400x300/f0f0f0/4a4a4a" alt="Feature 3 Placeholder">
-                <h3>SUBHEAD HERE</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                <img src="CK pictures/pic 3.png" alt="Master Your Hand">
+                <h3>Master Your Hand</h3>
+                <p>Draw and play one card per turn, or save them to create powerful combinations for a final push.</p>
             </div>
         </section>
 
         <section class="main-content">
             <div class="container">
-                <h2>Lorem Ipsum Dolor</h2>
-                <p class="section-subhead">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                <div class="content-gallery">
-                    <img src="https://placehold.co/600x400/f0f0f0/4a4a4a" alt="Content Gallery Image 1">
-                    <img src="https://placehold.co/600x400/f0f0f0/4a4a4a" alt="Content Gallery Image 2">
-                    <img src="https://placehold.co/1220x400/f0f0f0/4a4a4a" alt="Content Gallery Image 3">
+                <h2>A Game of Wits and Tactics</h2>
+                <p class="section-subhead">Chetri King is a test of foresight. Outsmart your opponent before the 60 turns are up.</p>
+                
+                <div class="slideshow-container">
+
+                  <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="CK pictures/Gemini_Generated_Image_2fydzt2fydzt2fyd.png" alt="Two kings playing Chetri King">
+                    <div class="text">Face Your Opponent</div>
+                  </div>
+
+                  <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="CK pictures/Gemini_Generated_Image_d22kknd22kknd22k.png" alt="Gameplay in action">
+                    <div class="text">Plan Your Strategy</div>
+                  </div>
+
+                  <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="CK pictures/Gemini_Generated_Image_ph3rkxph3rkxph3r.png" alt="Victory screen">
+                    <div class="text">Claim Your Victory</div>
+                  </div>
+
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
+                <br>
+
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+
             </div>
         </section>
     </main>
@@ -73,6 +101,35 @@
             </div>
         </div>
     </footer>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
 
 </body>
 </html>
