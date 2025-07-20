@@ -19,6 +19,57 @@
     .moveDown {
       margin-top: 3em;
     }
+
+    form {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: grid;
+      gap: 15px;
+    }
+
+    form div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    input[type="submit"], button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1em;
+      align-self: start;
+    }
+
+    input[type="submit"]:hover, button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -40,7 +91,21 @@
   <main>
     <div id="feedback"></div>
 
-    <!-- You will paste your form from the MDN tutorial here -->
+    <form>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="user_email" required>
+      </div>
+      <div>
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="user_message" required></textarea>
+      </div>
+      <button type="submit">Send your message</button>
+    </form>
   </main>
 
   <footer>
@@ -59,10 +124,12 @@
   <script>
     const feedbackElement = document.getElementById('feedback');
     const formElement = document.forms[0];
+
     if (formElement) {
       formElement.addEventListener('submit', function(e) {
         e.preventDefault();
-        feedbackElement.innerHTML = 'Hello ' + formElement.user_name.value + '! Thank you for your message. We will get back with you as soon as possible!';
+        const userName = formElement.user_name.value;
+        feedbackElement.innerHTML = `Hello ${userName}! Thank you for your message. We will get back with you as soon as possible!`;
         feedbackElement.style.display = "block";
         document.body.classList.toggle('moveDown');
       });

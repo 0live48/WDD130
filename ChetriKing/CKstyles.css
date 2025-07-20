@@ -1,0 +1,168 @@
+/* --- Style Guide Variables --- */
+:root {
+    --primary-color: #a52a2a;   /* Brown */
+    --secondary-color: #4a4a4a; /* Dark Gray */
+    --accent1-color: #ffd700;   /* Gold */
+    --accent2-color: #f0f0f0;   /* Light Gray */
+    --text-color: #333;
+    --light-text-color: #fff;
+}
+
+/* --- General Styles --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    color: var(--light-text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-image: url('https://placehold.co/1920x600/a52a2a/f0f0f0'); /* Placeholder BG */
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--accent1-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e6c300; /* Darker gold */
+}
+
+/* --- Features Section --- */
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.feature-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-card img {
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+/* --- Main Content Section --- */
+.main-content {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.main-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.section-subhead {
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.content-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content-gallery img:last-child {
+    grid-column: 1 / -1; /* Make the last image span both columns */
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
