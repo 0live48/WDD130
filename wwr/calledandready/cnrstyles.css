@@ -5,6 +5,16 @@
   #CACAC6 (Light Grey)
 */
 
+
+<style>
+  .gradient-text {
+    /* You can change the gradient colors here */
+    background-image: linear-gradient(to right, #6366F1, #A855F7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+</style>
 * {
     box-sizing: border-box;
 }
@@ -66,7 +76,7 @@ body {
 
 /* Buttons */
 .btn-shop {
-    background: linear-gradient(135deg, #CDBAA5, #BED3d3);
+    background: linear-gradient(135deg, #CDBAA5, #CDBAA5);
     color: #000000;
     transition: transform 0.2s, box-shadow 0.2s;
 }
